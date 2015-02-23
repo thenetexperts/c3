@@ -24,19 +24,6 @@ if (!array_key_exists('HTTP_X_CODECEPTION_CODECOVERAGE', $_SERVER)) {
     return;
 }
 
-// Autoload Codeception classes
-if (!class_exists('\\Codeception\\Codecept')) {
-    if (stream_resolve_include_path(__DIR__ . '/vendor/autoload.php')) {
-        require_once __DIR__ . '/vendor/autoload.php';
-    } elseif (file_exists(__DIR__ . '/codecept.phar')) {
-        require_once 'phar://'.__DIR__ . '/codecept.phar/autoload.php';
-    } elseif (stream_resolve_include_path('Codeception/autoload.php')) {
-        require_once 'Codeception/autoload.php';
-    } else {
-        __c3_error('Codeception is not loaded. Please check that either PHAR or Composer or PEAR package can be used');
-    }
-}
-
 if (!defined('C3_CODECOVERAGE_MEDIATE_STORAGE')) {
 
     // workaround for 'zend_mm_heap corrupted' problem
