@@ -34,6 +34,7 @@ Add to `composer.json`:
     ]
 }
 ```
+Note: If you are using Symfony < 2.4 you need to use 1.8 instead.
 
 post-install hooks will copy `c3.php` to the project root.
 
